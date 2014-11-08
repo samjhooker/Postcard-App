@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         }
         else{
             enterNameTextField.backgroundColor = UIColor.clearColor()
-            enterNameTextField.placeholder = "Name"
+            enterNameTextField.placeholder = "Name" //general comment
         }
         
         if enterMessageTextField.text == ""{
