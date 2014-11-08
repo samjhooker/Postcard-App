@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterMessageTextField: UITextField!
     @IBOutlet weak var mailButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +48,18 @@ class ViewController: UIViewController {
             enterMessageTextField.placeholder = "Message"
 
         }
-        if enterMessageTextField != "" && enterNameTextField != ""{
+        if (enterMessageTextField != "") && (enterNameTextField != ""){
             mailButton.setTitle("Mail Sent", forState: UIControlState.Normal)
+            var name: String
+            name = enterNameTextField.text
+            nameLabel.text = "- " + name
             messageLabel.text = enterMessageTextField.text
+            nameLabel.hidden = false
             messageLabel.hidden = false
             enterMessageTextField.text = ""
-            enterMessageTextField.resignFirstResponder() //function closes keyboard
+            enterNameTextField.text = ""
+            enterMessageTextField.resignFirstResponder()
+            enterNameTextField.resignFirstResponder()//function closes keyboard
         }
         
         
